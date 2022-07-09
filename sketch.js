@@ -94,8 +94,9 @@ function draw() {
     spawnObstaclesBottom();
 
 //condition for END state
-if(topObstaclesGroup.isTouching(balloon) || balloon.isTouching(topGround)
-|| balloon.isTouching(bottomGround) || bottomObstaclesGroup.isTouching(balloon)){
+//Write a condition for balloon touching the obstacles(bottomObstaclesGroup,topGround,bottomGround,topObstaclesGroup)
+if(balloon.isTouching(""))
+{
 
 gameState = END;
 
@@ -136,11 +137,10 @@ gameState = END;
 
 function reset()
 {
-  gameState = PLAY;
-  gameOver.visible = false;
-  restart.visible = false;
-  topObstaclesGroup.destroyEach();
-  bottomObstaclesGroup.destroyEach();
+  //Change the gameState to play
+  //Disable gameOver and restart button
+  //Destroy topObstaclesGroup and bottomObstaclesGroup
+ 
 
   score=0;
 }
@@ -186,7 +186,7 @@ function spawnObstaclesBottom()
     
     obstacleBottom.addImage(obsBottom1);
     obstacleBottom.debug=true
-
+//
     
     obstacleBottom.scale = 0.07;
     obstacleBottom.velocityX = -4;
@@ -236,12 +236,12 @@ function Score()
 {
          if(balloon.isTouching(barGroup))
          {
-           score = score + 1;
+           //increment the score by 1
          }
         textFont("algerian");
         textSize(30);
         fill("yellow");
-        text("Score: "+ score, 250, 50);
+        //Display the score 
        
   
 }
